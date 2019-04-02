@@ -21,3 +21,7 @@ tags
 [._]*.un~
 
 # End of https://www.gitignore.io/api/vim
+
+# Preview html files from Marp
+
+*.html
