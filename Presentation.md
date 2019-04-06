@@ -1,7 +1,22 @@
+---
+paginate: true
+style: |
+  table {
+    empty-cells: hide;
+  }
+  table.invis {
+    border: 0px none;
+  }
+  table.invis>tbody>th,
+  table.invis>tbody>tr,
+  table.invis>tbody>th>td,
+  table.invis>tbody>tr>td {
+    border: inherit;
+  }
+---
+
 <!--
     Use marp-next to generate pdf
-    paginate: true
-    footer:
 -->
 
 # 2019-1 SCSC Linux Seminar
@@ -102,7 +117,7 @@ Usually packaged in a form of distribution(*distro* for short) which is a collec
 
 Popular for server/enterprise use
 
-- Red Hat -> RHEL (Red Hat Enterprise Linux)
+- Red Hat &rarr; RHEL (Red Hat Enterprise Linux)
 Open-sourced but paid (provides technical support services).
   - CentOS
   RHEL redistributed with RHEL trademarks removed(free).
@@ -166,14 +181,16 @@ Feed output of `prog_a` to `prog_b`
   `--OPTION`
   e.g. `--help`,`--all`
 
-Common Options
-- `-h`,`--help` Display help text
-- `-v`,`--verbose` Give more detailed information.
-- `--version`(sometimes `-v` or `-V`) Display version information.
+<table style="font-size: smaller; overflow: visible">
+<caption style="font-size: larger; text-align: left;">Common Options</caption>
+<tr><td> <code>-h</code>,<code>--help</code> </td><td> Display help text </td></tr>
+<tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
+<tr><td> <code>--version</code>(sometimes <code>-v</code> or <code>-V</code>) </td><td> Display version information. </td></tr>
+</table>
 
 ---
 
-### Navigation
+## Navigation
 
 ---
 
@@ -183,12 +200,14 @@ Common Options
 
 `ls [OPTION]... [FILE]`
 
-Options
-- `-a`,`--all` Show hidden files and directories(starting with `.`).
-- `-l` **l**ong. Use long listing format.
-- `-h`,`--human-readable` Prints human-readable size.
-- `--color` Colourize.
-- `-s`,`--size` Print size.
+<table style="font-size: smaller; overflow: visible">
+<caption style="font-size: larger; text-align: left;">Options</caption>
+<tr><td> <code>-a</code>,<code>--all</code> </td><td> Show hidden files and directories(starting with <code>.</code>). </td></tr>
+<tr><td> <code>-l</code> </td><td> **l**ong. Use long listing format. </td></tr>
+<tr><td> <code>-h</code>,<code>--human-readable</code> </td><td> Prints human-readable size. </td></tr>
+<tr><td> <code>--color</code> </td><td> Colourize. </td></tr>
+<tr><td> <code>-s</code>,<code>--size</code> </td><td> Print size. </td></tr>
+</table>
 
 For more detailed usage, type `man ls`.
 
@@ -224,12 +243,15 @@ Find files by name.
 locate [OPTION]... PATTERN...
 ```
 
-- `-A`,`--all` Print entries that match all PATTERNs.
-- `-L`,`--follow` Follow symlink when counting.
-- `-i`,`--ignore-case` Case-insensitive search.
-- `-P`,`-H`,`--nofollow` Do not follow symlinks.
-- `-r REGEXP`, `--regexp REGEXP` Use regular expression. DO NOT use PATTERNs with this option set.
-- `--regex` Treat PATTERNs as regular expressions.
+<table style="font-size: smaller; overflow: visible">
+<caption style="font-size: larger; text-align: left;">Options</caption>
+<tr><td> <code>-A</code>,<code>--all</code> </td><td> Print entries that match all PATTERNs. </td></tr>
+<tr><td> <code>-L</code>,<code>--follow</code> </td><td> Follow symlink when counting. </td></tr>
+<tr><td> <code>-i</code>,<code>--ignore-case</code> </td><td> Case-insensitive search. </td></tr>
+<tr><td> <code>-P</code>,<code>-H</code>,<code>--nofollow</code> </td><td> Do not follow symlinks. </td></tr>
+<tr><td> <code>-r REGEXP</code>, <code>--regexp REGEXP</code> </td><td> Use regular expression. DO NOT use PATTERNs with this option set. </td></tr>
+<tr><td> <code>--regex</code> </td><td> Treat PATTERNs as regular expressions. </td></tr>
+</table>
 
 ---
 
@@ -239,9 +261,14 @@ locate [OPTION]... PATTERN...
 
 More powerful version of `locate`.
 
-`find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]`
+```text
+find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
+```
 
-- `-name PATTERN`,`-iname PATTERN`(case insensitive) Find files by name.
+<table style="font-size: smaller; overflow: visible">
+<caption style="font-size: larger; text-align: left;">Options</caption>
+<tr><td> <code>-name PATTERN</code>,<code>-iname PATTERN</code>(case insensitive) </td><td> Find files by name. </td></tr>
+</table>
 
 Please read `man` page. There are too many options to describe here.
 
@@ -249,7 +276,7 @@ For more detailed usage, type `man find`.
 
 ---
 
-### File Manupulation
+## File Manupulation
 
 ---
 
@@ -262,16 +289,19 @@ cp [OPTION]... [-T] SOURCE DEST
 cp [OPTION]... SOURCE... DIRECTORY
 cp [OPTION]... -t DIRECTORY SOURCE...
 ```
+<small>
 
-- `-f`,`--force` Force copy.
-- `-i`,`--interactive` Prompt before overwriting.
-- `-n`,`--no-clobber` Do not overwrite.
-- `-r`,`-R`,`--recursive` Recursive copy.
-- `-t DIRECTORY`, `--target-directory=DIRECTORY`
-  Copies everything into DIRECTORY
-- `-T`, `--no-target-directory`
-  Treat DEST as normal file(not directory).
+<table style="font-size: smaller; overflow: visible">
+<caption style="font-size: larger; text-align: left;">Options</caption>
+<tr><td> <code>-f</code>,<code>--force</code> </td><td> Force copy. </td></tr>
+<tr><td> <code>-i</code>,<code>--interactive</code> </td><td> Prompt before overwriting. </td></tr>
+<tr><td> <code>-n</code>,<code>--no-clobber</code> </td><td> Do not overwrite. </td></tr>
+<tr><td> <code>-r</code>,<code>-R</code>,<code>--recursive</code> </td><td> Recursive copy. </td></tr>
+<tr><td> <code>-t DIRECTORY</code>, <code>--target-directory=DIRECTORY</code> </td><td> Copies everything into DIRECTORY </td></tr>
+<tr><td> <code>-T</code>, <code>--no-target-directory</code> </td><td> Treat DEST as normal file(not directory). </td></tr>
+</table>
 
+</small>
 For more detailed usage, type `man cp`.
 
 ---
@@ -285,16 +315,19 @@ mv [OPTION]... [-T] SOURCE DEST
 mv [OPTION]... SOURCE... DIRECTORY
 mv [OPTION]... -t DIRECTORY SOURCE...
 ```
+<small>
 
-- `-f`,`--force` Force move/rename(i.e. no prompt before overwriting).
-- `-i`,`--interactive` Prompt before overwriting.
-- `-n`,`--no-clobber` Do not overwrite.
-- `-t DIRECTORY`, `--target-directory=DIRECTORY`
-  Moves everything into DIRECTORY
-- `-T`, `--no-target-directory`
-  Treat DEST as normal file(not directory).
-- `-v`,`--verbose` Give more detailed information.
+<table style="font-size: smaller; overflow: visible">
+<caption style="font-size: larger; text-align: left;">Options</caption>
+<tr><td> <code>-f</code>,<code>--force</code> </td><td> Force move/rename(i.e. no prompt before overwriting). </td></tr>
+<tr><td> <code>-i</code>,<code>--interactive</code> </td><td> Prompt before overwriting. </td></tr>
+<tr><td> <code>-n</code>,<code>--no-clobber</code> </td><td> Do not overwrite. </td></tr>
+<tr><td> <code>-t DIRECTORY</code>, <code>--target-directory=DIRECTORY</code> </td><td> Moves everything into DIRECTORY </td></tr>
+<tr><td> <code>-T</code>, <code>--no-target-directory</code> </td><td> Treat DEST as normal file(not directory). </td></tr>
+<tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
+</table>
 
+</small>
 For more detailed usage, type `man mv`.
 
 ---
@@ -307,10 +340,13 @@ For more detailed usage, type `man mv`.
 rm [OPTION]... [FILE]...
 ```
 
-- `-f`,`--force` Force removal, never prompt
-- `-i` Prompt before every removal
-- `-r`,`-R`,`--recursive` Recursive removal(i.e. remove directories and their contents.
-- `-v`,`--verbose` Give more detailed information.
+<table style="font-size: smaller; overflow: visible">
+<caption style="font-size: larger; text-align: left;">Options</caption>
+<tr><td> <code>-f</code>,<code>--force</code> </td><td> Force removal, never prompt </td></tr>
+<tr><td> <code>-i</code> </td><td> Prompt before every removal </td></tr>
+<tr><td> <code>-r</code>,<code>-R</code>,<code>--recursive</code> </td><td> Recursive removal(i.e. remove directories and their contents. </td></tr>
+<tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
+</table>
 
 For more detailed usage, type `man rm`.
 
@@ -324,8 +360,11 @@ For more detailed usage, type `man rm`.
 mkdir [OPTION]... DIRECTORY...
 ```
 
-- `-p`,`--parents` Make parent directories if necessary.
-- `-v`,`--verbose` Give more detailed information.
+<table style="font-size: smaller; overflow: visible">
+<caption style="font-size: larger; text-align: left;">Options</caption>
+<tr><td> <code>-p</code>,<code>--parents</code> </td><td> Make parent directories if necessary. </td></tr>
+<tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
+</table>
 
 For more detailed usage, type `man mkdir`.
 
@@ -351,7 +390,10 @@ Change file timestamps. Create a new file if specified file does not exist.
 touch [OPTION]... FILE...
 ```
 
-- `-d`, `--date=STRING` Use provided STRING instead of current time.
+<table style="font-size: smaller; overflow: visible">
+<caption style="font-size: larger; text-align: left;">Options</caption>
+<tr><td> <code>-d</code>, <code>--date=STRING</code> </td><td> Use provided STRING instead of current time. </td></tr>
+</table>
 
 
 For more detailed usage, type `man touch`.
@@ -361,7 +403,7 @@ For more detailed usage, type `man touch`.
 ### `chmod`
 
 **ch**ange file **mod**. Change file mode bits(=access permissions).
-
+<small>
 ```text
 chmod [OPTION]... MODE[,MODE]... FILE...
 chmod [OPTION]... OCTAL-MODE FILE...
@@ -370,21 +412,28 @@ chmod [OPTION]... --reference=RFILE FILE...
 
 Symbolic mode : `[ugoa...][[-+=][permissions...]...]`
 
-- `u` Owner(user)
-- `g` Group
-- `o` Others
+<table style="overflow: visible">
+<tr><td> <code>u</code> </td><td> Owner(user) </td></tr>
+<tr><td> <code>g</code> </td><td> Group </td></tr>
+<tr><td> <code>o</code> </td><td> Others </td></tr>
+</table>
 
-Permissions : `rwxXst`
-`+`/`-` Set/unset mode bit
-`=` Set only specified bit.
-
-- `r` **R**ead
-- `w` **W**rite
-- `x` E**x**ecute/search
+<table class="invis">
+<tr><td>
+Permissions : <code>rwxXst</code><br/>
+<code>+</code>/<code>-</code> Set/unset mode bit<br/>
+<code>=</code> Set only specified bit.<br/>
+</td><td>
+<table style="font-size:inherit; overflow: visible">
+<tr><td> <code>r</code> </td><td> <b>R</b>ead </td></tr>
+<tr><td> <code>w</code> </td><td> <b>W</b>rite </td></tr>
+<tr><td> <code>x</code> </td><td> E<b>x</b>ecute/search </td></tr>
+</table></td></tr></table>
+</small>
 
 ---
 
-### Other Commands
+## Other Commands
 
 ---
 
@@ -395,6 +444,8 @@ Con**cat**enate files and print to *stdout*.
 ```text
 cat [OPTION]... [FILE]...
 ```
+
+For more detailed usage, type `man cat`.
 
 ---
 
@@ -414,6 +465,8 @@ less [-[+]aABcCdeEfFgGiIJKLmMnNqQrRsSuUVwWX~]
      [-# shift] [+[+]cmd] [--] [filename]...
 ```
 
+For more detailed usage including keybindings, type `man less`.
+
 ---
 
 # Install Preparation
@@ -421,6 +474,8 @@ less [-[+]aABcCdeEfFgGiIJKLmMnNqQrRsSuUVwWX~]
 ---
 
 ## Virtual Machine vs. Bare Metal(Native)
+
+
 
 ---
 
