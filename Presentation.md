@@ -418,17 +418,23 @@ Symbolic mode : `[ugoa...][[-+=][permissions...]...]`
 <tr><td> <code>o</code> </td><td> Others </td></tr>
 </table>
 
-<table class="invis">
-<tr><td>
-Permissions : <code>rwxXst</code><br/>
-<code>+</code>/<code>-</code> Set/unset mode bit<br/>
-<code>=</code> Set only specified bit.<br/>
-</td><td>
+
+<div>
+<div style="float: left; padding-right:2em;">
+Permissions : <code>rwxXst</code>
+<table style="font-size:inherit; overflow: visible; padding-top: 0.75em">
+<tr><td><code>+</code>/<code>-</code> </td><td> Set/unset mode bit</td></tr>
+<tr><td><code>=</code> </td><td> Set only specified bit.</td></tr>
+</table>
+</div>
+<div style="float: left;">
 <table style="font-size:inherit; overflow: visible">
 <tr><td> <code>r</code> </td><td> <b>R</b>ead </td></tr>
 <tr><td> <code>w</code> </td><td> <b>W</b>rite </td></tr>
 <tr><td> <code>x</code> </td><td> E<b>x</b>ecute/search </td></tr>
-</table></td></tr></table>
+</table>
+</div>
+</div>
 </small>
 
 ---
