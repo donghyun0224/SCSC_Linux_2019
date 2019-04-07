@@ -13,6 +13,19 @@ style: |
   table.invis>tbody>tr>td {
     border: inherit;
   }
+  p.note {
+    color: darkgreen;
+    font-size: smaller;
+    background-color: lightgreen;
+    padding:0.5em;
+    border-radius: 5px
+  }
+  p.warn {
+    color: red;
+    background-color: mistyrose;
+    padding:0.5em;
+    border-radius: 5px;
+  }
 ---
 
 <!--
@@ -516,7 +529,7 @@ Not for everyday use.
     - You could resize from Windows OS using third party utilities(reboot required).
     - You could also resize your partition from Arch Live USB with `ntfsresize` command.
 - &ge;10GiB Required. Resize as you want.
-  <p style="color: red; background-color: #FFE4E1; margin-top: 1em;">
+  <p class="warn" style="margin-top:1em;">
   <b>WARNING</b><br>
   Resizing, partitioning and formatting the disk might cause DATA LOSS.<br>
   Backup your data if necessary.<br>
@@ -564,8 +577,8 @@ Just burn the image.
 
 ### PXE Boot(Network Boot)
 
-- For Linux, follow instructions in the [Arch Wiki](https://wiki.archlinux.org/index.php/PXE).
-- For Windows, you may use serva community edition [(section 3.17)](https://www.vercot.com/~serva/an/NonWindowsPXE3.html#linux).
+- For Linux, follow instructions in the [Arch Wiki-PXE](https://wiki.archlinux.org/index.php/PXE).
+- For Windows, you may use serva community edition [(Application Note Section 3.17)](https://www.vercot.com/~serva/an/NonWindowsPXE3.html#linux).
 
 ---
 
@@ -642,7 +655,7 @@ If you cannot use Boot Menu, you have to enter firmware setup and change boot or
 Boot order setting is usally located under `Boot` section.
 Change boot order and settings as necessary.
 
-<p style="color: darkgreen; font-size: smaller; background-color: lightgreen; margin-top:1.5em; padding:0.2em;">
+<p style="margin-top:1.5em; font-size: smaller;" class="note">
 <b>UEFI Users:</b><br>
 If you use Windows, run <code>shutdown /r /o /t 0</code> to enter Advanced Boot Options and enter UEFI Firmware Settings.<br>
 If you use Linux, run <code>systemctl reboot --firmware-setup</code> to enter Firmware Setup.<br>
@@ -654,7 +667,123 @@ If you use Linux, run <code>systemctl reboot --firmware-setup</code> to enter Fi
 
 ---
 
+### Keyboard Setup
+
+Default layout: US English
+
+1. List available layouts
+  ```text
+  /usr/share/kbd/keymaps/**/*.map.gz
+  ```
+1. Select layout
+  ```text
+  loadkeys <LAYOUT>
+  ```
+
+For most Korean keyboards, US English layout is just fine.
+
+---
+
+### Font Setup
+
+1. List available console fonts
+    ```text
+    /usr/share/kbd/consolefonts/
+    ```
+1. Select font
+    ```text
+    setfont <FONT> [-m <MAPPING>]
+    ```
+
+---
+
 ### Network Setup
+
+Enter `ip link` to list network interfaces.
+Recent version of Arch linux uses Predictable Network Interface Names.
+
+Interfaces starting with `en` are usually ethernet(wired) interfaces.
+Interfaces starting with `wl` are usually wireless interfaces.
+
+---
+
+### Static IP
+
+<style scoped>
+p,ol,pre {
+  font-size: 75%;
+}
+h3 {
+  padding-bottom: 0.5em;
+}
+</style>
+
+1. Flush Settings.
+    <pre>ip addr flush dev <i>device</i></pre>
+1. Setup IP address.
+    <pre>ip address add <i>address/prefix_len</i> broadcast + dev <i>interface</i></pre> 
+1. Setup routing table.
+    <pre>ip route add default via <i>gateway address</i> dev <i>interface</i></pre>
+1. In `resolv.conf`(type `man resolv.conf` for more details), add:
+    <pre>nameserver <i>DNS Address</i></pre>
+   to set DNS Server
+
+<p class="note" style="margin-top:0.5em">
+<b><i>NOTE:</i></b><br>
+<i>address/prefix_len</i> uses CIDR notaion(e.g. 192.168.0.123/24).<br>
+</p>
+
+---
+
+### Wireless Network
+
+1. View Devices
+    ```text
+    ip link
+    ```
+    Devices starting with `wl` are WLAN devices.
+
+1. Bring Interface Up(If the device state is DOWN)
+   <pre>ip link set <i>interface</i> up</pre>
+   If soft-blocked(see `rfkill`output),
+   <pre>rfkill unblock wifi</pre>
+
+---
+
+### Wireless Network(cont'd)
+
+3. Scan Access Point(AP)s
+   <pre>iw dev <i>interface</i> scan | less</pre>
+    - SSID: Name of the network
+    - Signal: Signal Strength(in dBm)
+    - Security
+        - Does not have `Privacy` in the `capability` section &rarr; not encrypted.
+        - Has `RSN` block &rarr; WPA2
+        - Has `WPA` section &rarr; WPA is enabled.
+        - Encrypted but neither `RSN` nor `WPA` present &rarr; WEP
+
+---
+
+### Wireless Network(cont'd)
+
+4. Connecting to the AP
+    - No encryption
+        <pre>iw dev <i>interface</i> connect "<i>your_essid</i>"</pre>
+    - WEP
+        <pre>iw dev <i>interface</i> connect "<i>your_essid</i>" key 0:<i>your_key</i></pre>
+    - WPA-Personal
+        <pre style="font-size:80%">wpa_supplicant -B -i <i>interface</i> -c <(wpa_passphrase <i>MYSSID</i> <i>passphrase</i>)</pre>
+    You may need to run `dhclient` to receive IP address from the DHCP server.
+
+For more information such as WPA-Enterprise, see [ArchWiki-WPA supplicant](https://wiki.archlinux.org/index.php/WPA_supplicant)
+
+---
+
+### Testing Network Setup
+
+- Type `ip addr` to display current IP address.
+- Type <code>ping <i>server-domain-name</i></code> to check connectivity to the internet
+    - Example: `ping google.com`
 
 ---
 
