@@ -481,11 +481,47 @@ For more detailed usage including keybindings, type `man less`.
 
 ## Virtual Machine vs. Bare Metal(Native)
 
+- Advantages of VM
+  - Can try multiple OSes on the same computer.
+  - No need to repartition the disk drive.
+  - Guest OS does not affect host system.
+- Drawbacks of VM
+  - Less efficient(Slower)
+  - Indirect HW access
 
+Good for trying out a new OS.
+Not for everyday use.
+
+---
+
+### Popular VM Softwares
+
+- VMWare
+
+- Oracle VirtualBox
 
 ---
 
 ### Preparing VM
+
+- Select appropirate guest OS(Arch Linux or Linux 4.X or 5.X(if avaliable)).
+- If you selected Arch Linux, VM software will choose optimal memory and disk size.
+- If you selected general Linux or configuring VM manually, use 1GiB of RAM and &ge;10GiB of virtual disk(20GiB suggested).
+
+---
+
+### Preparing Existing Disk
+
+- Resize existing partition to make empty space.
+    - You could resize from Windows OS using third party utilities(reboot required).
+    - You could also resize your partition from Arch Live USB with `ntfsresize` command.
+- &ge;10GiB Required. Resize as you want.
+  <p style="color: red; background-color: #FFE4E1; margin-top: 1em;">
+  <b>WARNING</b><br>
+  Resizing, partitioning and formatting the disk might cause DATA LOSS.<br>
+  Backup your data if necessary.<br>
+  Install at YOUR OWN risk.<br>
+  </p>
 
 ---
 
@@ -493,7 +529,124 @@ For more detailed usage including keybindings, type `man less`.
 
 ---
 
+### Downloading Latest Arch .iso Image
+
+1. Visit [https://www.archlinux.org/download/](https://www.archlinux.org/download/).
+1. Download via BitTorrent or HTTP.
+1. Verify signature/hash(Optional).
+
+---
+
+### LiveUSB - Linux
+
+Use `dd` to write the image to the disk.
+
+Run as root.
+```text
+# dd if=<PATH TO ISO FILE> of=<YOUR USB DRIVE> status=progress bs=<BLOCK SIZE> oflag=sync
+# sync
+```
+
+---
+
+### LiveUSB - Linux
+
+Use **win32diskimager**, **USBwriter** or **Rufus** to write image to the USB drive.
+Select `dd mode` for **Rufus**.
+
+---
+
+### Optical Media(CD/DVD)
+
+Just burn the image.
+
+---
+
+### PXE Boot(Network Boot)
+
+- For Linux, follow instructions in the [Arch Wiki](https://wiki.archlinux.org/index.php/PXE).
+- For Windows, you may use serva community edition [(section 3.17)](https://www.vercot.com/~serva/an/NonWindowsPXE3.html#linux).
+
+---
+
 ## Booting the Live Environment
+
+---
+
+### Entering the Boot Menu/Firmware Setup.
+
+- You might need to enter the Boot Menu/Firmware Setup to boot from the external devices(e.g. USB)
+- Press a hotkey during the POST(when the logo displays) to enter the Boot Menu/Firmware Setup.
+- Hotkey differs from hardware to hardware(consult the manual).
+- Usually `F2`,`Del`,`F10` for the Setup, `F8`~`F12` for the Boot Menu.
+
+---
+
+### Boot Menu
+
+Usually looks like this:
+<style scoped>
+table,th,td,tr {
+  font-family:monospace;
+  color:blue;
+  border-collapse:collapse;
+  overflow:visible;
+}
+tr>* {
+  background-color:lightgrey;
+  border: 2px solid blue;
+  padding:0.3em;
+}
+th {
+  text-align: center;
+  color:white;
+}
+td {
+  border-top: 0px none;
+  border-bottom: 0px none;
+}
+td:empty:after{
+  content: "\00a0";
+}
+tr:last-child {
+  border-bottom: 2px solid blue;
+}
+table>tbody>tr:nth-child(3)>td {
+  color:white;
+}
+td:first-child {
+  border-right: 0px none;
+}
+td:nth-child(2) {
+  border-left: 0px none;
+}
+</style>
+
+<table>
+<tr><th colspan="2">Boot Menu:</th></tr>
+<tr><td>1.</td><td>+Removable Devices</td></tr>
+<tr><td>2.</td><td>+Hard Drive</td></tr>
+<tr><td>3.</td><td> CD-ROM/DVD-ROM</td></tr>
+<tr><td>4.</td><td> Network Boot from AMD Am79C970A</td></tr>
+<tr><td/><td/></tr>
+<tr><td/><td>&lt;Enter Setup&gt;</td></tr>
+</table>
+
+Select appropirate boot option.
+
+---
+
+### Firmware Setup
+
+If you cannot use Boot Menu, you have to enter firmware setup and change boot order.
+Boot order setting is usally located under `Boot` section.
+Change boot order and settings as necessary.
+
+<p style="color: darkgreen; font-size: smaller; background-color: lightgreen; margin-top:1.5em; padding:0.2em;">
+<b>UEFI Users:</b><br>
+If you use Windows, run <code>shutdown /r /o /t 0</code> to enter Advanced Boot Options and enter UEFI Firmware Settings.<br>
+If you use Linux, run <code>systemctl reboot --firmware-setup</code> to enter Firmware Setup.<br>
+</p>
 
 ---
 
