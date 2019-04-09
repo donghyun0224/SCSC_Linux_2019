@@ -1,4 +1,5 @@
 ---
+marp: true
 paginate: true
 style: |
   table {
@@ -25,6 +26,15 @@ style: |
     background-color: mistyrose;
     padding:0.5em;
     border-radius: 5px;
+  }
+  table {
+    overflow: visible;
+  }
+  table caption {
+    text-align: left;
+  }
+  table.small {
+    font-size: smaller;
   }
 ---
 
@@ -194,8 +204,8 @@ Feed output of `prog_a` to `prog_b`
   `--OPTION`
   e.g. `--help`,`--all`
 
-<table style="font-size: smaller; overflow: visible">
-<caption style="font-size: larger; text-align: left;">Common Options</caption>
+<table class="small">
+<caption style="font-size: larger;">Common Options</caption>
 <tr><td> <code>-h</code>,<code>--help</code> </td><td> Display help text </td></tr>
 <tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
 <tr><td> <code>--version</code>(sometimes <code>-v</code> or <code>-V</code>) </td><td> Display version information. </td></tr>
@@ -213,10 +223,10 @@ Feed output of `prog_a` to `prog_b`
 
 `ls [OPTION]... [FILE]`
 
-<table style="font-size: smaller; overflow: visible">
-<caption style="font-size: larger; text-align: left;">Options</caption>
+<table class="small">
+<caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-a</code>,<code>--all</code> </td><td> Show hidden files and directories(starting with <code>.</code>). </td></tr>
-<tr><td> <code>-l</code> </td><td> **l**ong. Use long listing format. </td></tr>
+<tr><td> <code>-l</code> </td><td> <b>l</b>ong. Use long listing format. </td></tr>
 <tr><td> <code>-h</code>,<code>--human-readable</code> </td><td> Prints human-readable size. </td></tr>
 <tr><td> <code>--color</code> </td><td> Colourize. </td></tr>
 <tr><td> <code>-s</code>,<code>--size</code> </td><td> Print size. </td></tr>
@@ -256,8 +266,8 @@ Find files by name.
 locate [OPTION]... PATTERN...
 ```
 
-<table style="font-size: smaller; overflow: visible">
-<caption style="font-size: larger; text-align: left;">Options</caption>
+<table class="small">
+<caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-A</code>,<code>--all</code> </td><td> Print entries that match all PATTERNs. </td></tr>
 <tr><td> <code>-L</code>,<code>--follow</code> </td><td> Follow symlink when counting. </td></tr>
 <tr><td> <code>-i</code>,<code>--ignore-case</code> </td><td> Case-insensitive search. </td></tr>
@@ -278,8 +288,8 @@ More powerful version of `locate`.
 find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
 ```
 
-<table style="font-size: smaller; overflow: visible">
-<caption style="font-size: larger; text-align: left;">Options</caption>
+<table class="small">
+<caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-name PATTERN</code>,<code>-iname PATTERN</code>(case insensitive) </td><td> Find files by name. </td></tr>
 </table>
 
@@ -304,8 +314,8 @@ cp [OPTION]... -t DIRECTORY SOURCE...
 ```
 <small>
 
-<table style="font-size: smaller; overflow: visible">
-<caption style="font-size: larger; text-align: left;">Options</caption>
+<table class="small">
+<caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-f</code>,<code>--force</code> </td><td> Force copy. </td></tr>
 <tr><td> <code>-i</code>,<code>--interactive</code> </td><td> Prompt before overwriting. </td></tr>
 <tr><td> <code>-n</code>,<code>--no-clobber</code> </td><td> Do not overwrite. </td></tr>
@@ -330,8 +340,8 @@ mv [OPTION]... -t DIRECTORY SOURCE...
 ```
 <small>
 
-<table style="font-size: smaller; overflow: visible">
-<caption style="font-size: larger; text-align: left;">Options</caption>
+<table class="small">
+<caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-f</code>,<code>--force</code> </td><td> Force move/rename(i.e. no prompt before overwriting). </td></tr>
 <tr><td> <code>-i</code>,<code>--interactive</code> </td><td> Prompt before overwriting. </td></tr>
 <tr><td> <code>-n</code>,<code>--no-clobber</code> </td><td> Do not overwrite. </td></tr>
@@ -353,8 +363,8 @@ For more detailed usage, type `man mv`.
 rm [OPTION]... [FILE]...
 ```
 
-<table style="font-size: smaller; overflow: visible">
-<caption style="font-size: larger; text-align: left;">Options</caption>
+<table class="small">
+<caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-f</code>,<code>--force</code> </td><td> Force removal, never prompt </td></tr>
 <tr><td> <code>-i</code> </td><td> Prompt before every removal </td></tr>
 <tr><td> <code>-r</code>,<code>-R</code>,<code>--recursive</code> </td><td> Recursive removal(i.e. remove directories and their contents. </td></tr>
@@ -373,8 +383,8 @@ For more detailed usage, type `man rm`.
 mkdir [OPTION]... DIRECTORY...
 ```
 
-<table style="font-size: smaller; overflow: visible">
-<caption style="font-size: larger; text-align: left;">Options</caption>
+<table class="small">
+<caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-p</code>,<code>--parents</code> </td><td> Make parent directories if necessary. </td></tr>
 <tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
 </table>
@@ -403,8 +413,8 @@ Change file timestamps. Create a new file if specified file does not exist.
 touch [OPTION]... FILE...
 ```
 
-<table style="font-size: smaller; overflow: visible">
-<caption style="font-size: larger; text-align: left;">Options</caption>
+<table class="small">
+<caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-d</code>, <code>--date=STRING</code> </td><td> Use provided STRING instead of current time. </td></tr>
 </table>
 
@@ -425,7 +435,7 @@ chmod [OPTION]... --reference=RFILE FILE...
 
 Symbolic mode : `[ugoa...][[-+=][permissions...]...]`
 
-<table style="overflow: visible">
+<table>
 <tr><td> <code>u</code> </td><td> Owner(user) </td></tr>
 <tr><td> <code>g</code> </td><td> Group </td></tr>
 <tr><td> <code>o</code> </td><td> Others </td></tr>
@@ -435,13 +445,13 @@ Symbolic mode : `[ugoa...][[-+=][permissions...]...]`
 <div>
 <div style="float: left; padding-right:2em;">
 Permissions : <code>rwxXst</code>
-<table style="font-size:inherit; overflow: visible; padding-top: 0.75em">
+<table style="font-size:inherit; padding-top: 0.75em">
 <tr><td><code>+</code>/<code>-</code> </td><td> Set/unset mode bit</td></tr>
 <tr><td><code>=</code> </td><td> Set only specified bit.</td></tr>
 </table>
 </div>
 <div style="float: left;">
-<table style="font-size:inherit; overflow: visible">
+<table style="font-size:inherit;">
 <tr><td> <code>r</code> </td><td> <b>R</b>ead </td></tr>
 <tr><td> <code>w</code> </td><td> <b>W</b>rite </td></tr>
 <tr><td> <code>x</code> </td><td> E<b>x</b>ecute/search </td></tr>
@@ -599,6 +609,10 @@ Just burn the image.
 
 Usually looks like this:
 <style scoped>
+table {
+  padding:0.5em;
+  float: left;
+}
 table,th,td,tr {
   font-family:monospace;
   color:blue;
@@ -614,7 +628,7 @@ th {
   text-align: center;
   color:white;
 }
-td {
+td, tr {
   border-top: 0px none;
   border-bottom: 0px none;
 }
@@ -784,6 +798,37 @@ For more information such as WPA-Enterprise, see [ArchWiki-WPA supplicant](https
 - Type `ip addr` to display current IP address.
 - Type <code>ping <i>server-domain-name</i></code> to check connectivity to the internet
     - Example: `ping google.com`
+
+---
+
+### Sync Time
+
+1. Use `timedatectl`(component of `systemd`) to set timezone.
+    1. Check status and timezone
+        ```text
+        timedatectl status
+        ```
+    1. List all timezones
+        ```text
+        timedatectl list-timezones
+        ```
+    1. Select timezone
+        <pre>timedatectl set-timezone <i>Zone/SubZone</i></pre>
+        or
+        <pre>ln -sf /usr/share/zoneinfo/<i>Zone/SubZone</i> /etc/localtime</pre>
+
+---
+
+### Sync Time(cont'd)
+
+2. Sync with NTP server
+    ```text
+    timedatectl set-ntp true
+    ```
+    or force resync by restarting the daemon using following command:
+    ```text
+    systemctl restart systemd-timesyncd
+    ```
 
 ---
 
