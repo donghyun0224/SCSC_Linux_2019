@@ -33,7 +33,7 @@ style: |
   table caption {
     text-align: left;
   }
-  table.small {
+  table.smalltbl {
     font-size: smaller;
   }
 ---
@@ -126,7 +126,7 @@ Usually packaged in a form of distribution(*distro* for short) which is a collec
 
 ### Debian GNU/Linux
 
-- Debian GNU/Linux (There are other Debian OSes that does not use Linux kernel. (e.g. Debian GNU/Hurd))
+- Debian GNU/Linux (There are other Debian OSes that does not use Linux kernel. (*e.g.*, Debian GNU/Hurd))
   - Ubuntu Linux
   Perhaps the most well-known desktop-oriented Linux.
     - Linux Mint
@@ -198,18 +198,20 @@ Feed output of `prog_a` to `prog_b`
 
 - Single-Character Options
   `-OPTION`
-  e.g. `-h`,`-a`
+  *e.g.*, `-h`,`-a`
   Some commands MAY NOT support this.
 - Multi-Character Options
   `--OPTION`
-  e.g. `--help`,`--all`
+  *e.g.*, `--help`,`--all`
 
-<table class="small">
+<table class="smalltbl">
 <caption style="font-size: larger;">Common Options</caption>
 <tr><td> <code>-h</code>,<code>--help</code> </td><td> Display help text </td></tr>
 <tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
 <tr><td> <code>--version</code>(sometimes <code>-v</code> or <code>-V</code>) </td><td> Display version information. </td></tr>
 </table>
+
+<span style="font-size:70%">Command descriptions and options are from the `man` page.</span>
 
 ---
 
@@ -223,7 +225,7 @@ Feed output of `prog_a` to `prog_b`
 
 `ls [OPTION]... [FILE]`
 
-<table class="small">
+<table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-a</code>,<code>--all</code> </td><td> Show hidden files and directories(starting with <code>.</code>). </td></tr>
 <tr><td> <code>-l</code> </td><td> <b>l</b>ong. Use long listing format. </td></tr>
@@ -266,7 +268,7 @@ Find files by name.
 locate [OPTION]... PATTERN...
 ```
 
-<table class="small">
+<table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-A</code>,<code>--all</code> </td><td> Print entries that match all PATTERNs. </td></tr>
 <tr><td> <code>-L</code>,<code>--follow</code> </td><td> Follow symlink when counting. </td></tr>
@@ -288,7 +290,7 @@ More powerful version of `locate`.
 find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
 ```
 
-<table class="small">
+<table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-name PATTERN</code>,<code>-iname PATTERN</code>(case insensitive) </td><td> Find files by name. </td></tr>
 </table>
@@ -314,7 +316,7 @@ cp [OPTION]... -t DIRECTORY SOURCE...
 ```
 <small>
 
-<table class="small">
+<table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-f</code>,<code>--force</code> </td><td> Force copy. </td></tr>
 <tr><td> <code>-i</code>,<code>--interactive</code> </td><td> Prompt before overwriting. </td></tr>
@@ -340,9 +342,9 @@ mv [OPTION]... -t DIRECTORY SOURCE...
 ```
 <small>
 
-<table class="small">
+<table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
-<tr><td> <code>-f</code>,<code>--force</code> </td><td> Force move/rename(i.e. no prompt before overwriting). </td></tr>
+<tr><td> <code>-f</code>,<code>--force</code> </td><td> Force move/rename(*i.e.*, no prompt before overwriting). </td></tr>
 <tr><td> <code>-i</code>,<code>--interactive</code> </td><td> Prompt before overwriting. </td></tr>
 <tr><td> <code>-n</code>,<code>--no-clobber</code> </td><td> Do not overwrite. </td></tr>
 <tr><td> <code>-t DIRECTORY</code>, <code>--target-directory=DIRECTORY</code> </td><td> Moves everything into DIRECTORY </td></tr>
@@ -363,11 +365,11 @@ For more detailed usage, type `man mv`.
 rm [OPTION]... [FILE]...
 ```
 
-<table class="small">
+<table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-f</code>,<code>--force</code> </td><td> Force removal, never prompt </td></tr>
 <tr><td> <code>-i</code> </td><td> Prompt before every removal </td></tr>
-<tr><td> <code>-r</code>,<code>-R</code>,<code>--recursive</code> </td><td> Recursive removal(i.e. remove directories and their contents. </td></tr>
+<tr><td> <code>-r</code>,<code>-R</code>,<code>--recursive</code> </td><td> Recursive removal(*i.e.*, remove directories and their contents. </td></tr>
 <tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
 </table>
 
@@ -383,7 +385,7 @@ For more detailed usage, type `man rm`.
 mkdir [OPTION]... DIRECTORY...
 ```
 
-<table class="small">
+<table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-p</code>,<code>--parents</code> </td><td> Make parent directories if necessary. </td></tr>
 <tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
@@ -413,7 +415,7 @@ Change file timestamps. Create a new file if specified file does not exist.
 touch [OPTION]... FILE...
 ```
 
-<table class="small">
+<table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-d</code>, <code>--date=STRING</code> </td><td> Use provided STRING instead of current time. </td></tr>
 </table>
@@ -512,8 +514,7 @@ For more detailed usage including keybindings, type `man less`.
   - Less efficient(Slower)
   - Indirect HW access
 
-Good for trying out a new OS.
-Not for everyday use.
+Good for testing a new OS with minimized risk.
 
 ---
 
@@ -598,7 +599,7 @@ Just burn the image.
 
 ### Entering the Boot Menu/Firmware Setup.
 
-- You might need to enter the Boot Menu/Firmware Setup to boot from the external devices(e.g. USB)
+- You might need to enter the Boot Menu/Firmware Setup to boot from the external devices(*e.g.*, USB)
 - Press a hotkey during the POST(when the logo displays) to enter the Boot Menu/Firmware Setup.
 - Hotkey differs from hardware to hardware(consult the manual).
 - Usually `F2`,`Del`,`F10` for the Setup, `F8`~`F12` for the Boot Menu.
@@ -744,7 +745,7 @@ h3 {
 
 <p class="note" style="margin-top:0.5em">
 <b><i>NOTE:</i></b><br>
-<i>address/prefix_len</i> uses CIDR notaion(e.g. 192.168.0.123/24).<br>
+<i>address/prefix_len</i> uses CIDR notaion(*e.g.*, 192.168.0.123/24).<br>
 </p>
 
 ---
@@ -841,6 +842,116 @@ For more information such as WPA-Enterprise, see [ArchWiki-WPA supplicant](https
 ---
 
 ### Filesystem Hierarchy Standard
+
+<style scoped>
+table * {
+  font-size: 90%;
+}
+</style>
+Linux Standard for directory structure and directory contents.
+
+All files and directories are located under the root(`/`).
+
+| Directory | Description |
+| :--- | :--- |
+| `/` | *Primary hierarchy* root and root directory of the entire file system hierarchy. |
+| `/bin` | Essential command binaries that need to be available in single user mode; for all users, *e.g.*, `cat`, `ls`, `cp`. |
+| `/boot` | Boot loader files, *e.g.*, kernels, initrd. |
+| `/dev` | device files, *e.g.*, `/dev/null`, `/dev/disk0`, `/dev/sda1`, `/dev/tty`, `/dev/random.` |
+| `/etc` | Host-specific system-wide configuration files. |
+
+<span style="font-size: 70%">from [Wikipedia-Filesystem Hierachy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)</span>
+
+---
+
+### Filesystem Hierarchy Standard (cont'd)
+
+<style scoped>
+table * {
+  font-size: 90%;
+}
+</style>
+
+| Directory (cont'd) | Description (cont'd) |
+| :--- | :--- |
+| `/home` | Users' home directories, containing saved files, personal settings, etc. |
+| `/lib` | Libraries essential for the binaries in /bin and /sbin. |
+| <code>/lib<i>&lt;qualifier&gt;</i></code><br/><i>e.g.</i>, <code>/lib32</code>, <code>/lib64</code> | Alternative format essential libraries. |
+| `/media` | Mount points for removable media such as CD-ROMs (&ge;FHS-2.3). |
+| `/mnt` | Temporarily mounted filesystems. |
+| `/opt` | Optional application software packages. |
+| `/proc` | Virtual filesystem providing process and kernel information as files (procfs). |
+
+<span style="font-size: 70%">from [Wikipedia-Filesystem Hierachy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)</span>
+
+---
+
+### Filesystem Hierarchy Standard (cont'd)
+
+<style scoped>
+table * {
+  font-size: 90%;
+}
+</style>
+
+| Directory (cont'd) | Description (cont'd) |
+| :--- | :--- |
+| `/root` | Home directory for the root user. |
+| `/run` | Run-time variable data: Information about the running system since last boot. |
+| `/sbin` | Essential system binaries, *e.g.*, `fsck`, `init`, `route`. |
+| `/srv` | Site-specific data served by this system (&ge;FHS-2.3). |
+| `/sys` | Contains information about devices, drivers, and some kernel features. |
+| `/tmp` | Temporary files. Often not preserved between system reboots. |
+
+<span style="font-size: 70%">from [Wikipedia-Filesystem Hierachy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)</span>
+
+---
+
+### Filesystem Hierarchy Standard (cont'd)
+
+<style scoped>
+table * {
+  font-size: 90%;
+}
+</style>
+
+| Directory (cont'd) | Description (cont'd) |
+| :--- | :--- |
+| `/usr` | *Secondary hierarchy* for read-only user data; contains the majority of (multi-)user utilities and applications. |
+| &emsp;`/usr/bin` | Non-essential command binaries (not needed in single user mode); for all users. |
+| &emsp;`/usr/include` | Standard include files. |
+| &emsp;`/usr/lib` | Libraries for the binaries in `/usr/bin` and `/usr/sbin`. |
+| &emsp;<code>/usr/lib<i>&lt;qualifier&gt;</i></code><br/><i>e.g.</i>, <code>/usr/lib32</code> | Alternative format libraries. |
+| &emsp;`/usr/local` | *Tertiary hierarchy* for local data, specific to this host. |
+| &emsp;`/usr/sbin` | Non-essential system binaries. |
+| &emsp;`/usr/src` | Source code |
+
+
+<span style="font-size: 70%">from [Wikipedia-Filesystem Hierachy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)</span>
+
+---
+
+### Filesystem Hierarchy Standard (cont'd)
+
+<style scoped>
+table * {
+  font-size: 90%;
+}
+</style>
+
+| Directory (cont'd) | Description (cont'd) |
+| :--- | :--- |
+| `/var` | Variable files—files whose content is expected to continually change during normal operation of the system—such as logs, spool files, and temporary e-mail files. |
+| &emsp;`/var/cache` | Application cache data. Could be deleted without loss of data. |
+| &emsp;`/var/lib` | State information. Persistent data modified by programs as they run. |
+| &emsp;`/var/lock` | Lock files. Files keeping track of resources currently in use. |
+| &emsp;`/var/log` | Log files. Various logs. |
+| &emsp;`/var/mail` | Mailbox files. |
+| &emsp;`/var/run` | Run-time variable data. Replaced by `/run` in FHS 3.0. |
+| &emsp;`/var/spool` | Spool for tasks waiting to be processed. |
+| &emsp;`/var/tmp` | Temporary files to be preserved between reboots. |
+
+<span style="font-size: 70%">from [Wikipedia-Filesystem Hierachy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard)</span>
 
 ---
 
