@@ -1048,7 +1048,7 @@ p.note, p.warn {
 - If you are using UEFI, create EFI system partition first(if it does not exists).
     Select `EFI System` partition type.
 - Then, create required partitions (*e.g.*, `/`, `/home`).
-    Select approperate partition type (*e.g.*, `Linux Root`, `Linux /home`).
+    Select appropirate partition type (*e.g.*, `Linux Root`, `Linux /home`).
 - Finally, create swap partition.
     Select `Linux Swap` partition type.
 
