@@ -1021,12 +1021,12 @@ p.note, p.warn {
 
 ### Partitioning (cont'd)
 
-- You can you `parted`(CLI), `fdisk`(CLI) or `cfdisk`(TUI) from the liveUSB.
+- You can use `parted`(CLI), `fdisk`(CLI) or `cfdisk`(TUI) from the liveUSB.
 - If your disk is empty(*i.e.*, no partitions present), you may have to create partition table.
 
   <p class="note">
   <b><i>NOTE:</i></b><br>
-  To shrink existing partition, it is worth using `gParted`(GUI) with liveboot USB that supports graphical enviroment to avoid mistakes that might lead to the data loss.
+  To shrink existing partition, it is worth using <code>gParted</code>(GUI) with liveboot USB that supports graphical enviroment to avoid mistakes that might lead to the data loss.
   </p>
   <p class="warn">
   <b>WARNING</b><br>
@@ -1038,7 +1038,7 @@ p.note, p.warn {
   <p class="warn" style="margin-top:0.5e">
   <b>WARNING</b><br>
   Deleting and rewriting partition table might REMOVE ALL existing PARTITIONS.<br>
-  Use conversion utilities such as `gdisk`, `gptfdisk` to convert MBT to/from GPT.<br>
+  Use conversion utilities such as <code>gdisk</code>, <code>gptfdisk</code> to convert MBT to/from GPT.<br>
   </p>
 
 ---
