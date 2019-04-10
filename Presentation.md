@@ -114,9 +114,9 @@ Linux is a family of free OS based on the Linux kernel.
 
 The first version of the Linux as created by Linus Torvalds in 1991, as a MINIX-like free OS.
 
-Freely modifiable(under GPL license), so everyone could make their own distro by obtaining necessary system components.
+Freely modifiable (under GPL license), so everyone could make their own distro by obtaining necessary system components.
 
-Usually packaged in a form of distribution(*distro* for short) which is a collection of necessary software packages for easy installation.
+Usually packaged in a form of distribution (*distro* for short) which is a collection of necessary software packages for easy installation.
 
 ---
 
@@ -143,7 +143,7 @@ Popular for server/enterprise use
 - Red Hat &rarr; RHEL (Red Hat Enterprise Linux)
 Open-sourced but paid (provides technical support services).
   - CentOS
-  RHEL redistributed with RHEL trademarks removed(free).
+  RHEL redistributed with RHEL trademarks removed (free).
   - Fedora (Derived from Red Hat)
 
 ---
@@ -166,7 +166,7 @@ Unix-like Linux
   - Manjaro
   Easier version of Arch
 - Gentoo
-Installing from the source(including OS itself).
+Installing from the source (including OS itself).
 - Android
 Popular smartphone OS.
 
@@ -181,10 +181,10 @@ Popular smartphone OS.
 Redirection: Redirect standard I/Os from/to file(s).
 Piping: Redirect *stdout* of one program to *stdin* of another program.
 
-- Redirect to file(*stdout*)
+- Redirect to file (*stdout*)
 `COMMAND > FILE` : Overwrite
 `COMMAND >> FILE` : Append
-- Redirect from file(*stdin*)
+- Redirect from file (*stdin*)
 `COMMAND < FILE`
 - Redirect *stderr*
 `COMMAND 2> FILE`
@@ -208,7 +208,7 @@ Feed output of `prog_a` to `prog_b`
 <caption style="font-size: larger;">Common Options</caption>
 <tr><td> <code>-h</code>,<code>--help</code> </td><td> Display help text </td></tr>
 <tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
-<tr><td> <code>--version</code>(sometimes <code>-v</code> or <code>-V</code>) </td><td> Display version information. </td></tr>
+<tr><td> <code>--version</code>&nbsp;(sometimes <code>-v</code> or <code>-V</code>) </td><td> Display version information. </td></tr>
 </table>
 
 <span style="font-size:70%">Command descriptions and options are from the `man` page.</span>
@@ -227,7 +227,7 @@ Feed output of `prog_a` to `prog_b`
 
 <table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
-<tr><td> <code>-a</code>,<code>--all</code> </td><td> Show hidden files and directories(starting with <code>.</code>). </td></tr>
+<tr><td> <code>-a</code>,<code>--all</code> </td><td> Show hidden files and directories (starting with <code>.</code>). </td></tr>
 <tr><td> <code>-l</code> </td><td> <b>l</b>ong. Use long listing format. </td></tr>
 <tr><td> <code>-h</code>,<code>--human-readable</code> </td><td> Prints human-readable size. </td></tr>
 <tr><td> <code>--color</code> </td><td> Colourize. </td></tr>
@@ -292,7 +292,7 @@ find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
 
 <table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
-<tr><td> <code>-name PATTERN</code>,<code>-iname PATTERN</code>(case insensitive) </td><td> Find files by name. </td></tr>
+<tr><td> <code>-name PATTERN</code>,<code>-iname PATTERN</code>&nbsp;(case insensitive) </td><td> Find files by name. </td></tr>
 </table>
 
 Please read `man` page. There are too many options to describe here.
@@ -323,7 +323,7 @@ cp [OPTION]... -t DIRECTORY SOURCE...
 <tr><td> <code>-n</code>,<code>--no-clobber</code> </td><td> Do not overwrite. </td></tr>
 <tr><td> <code>-r</code>,<code>-R</code>,<code>--recursive</code> </td><td> Recursive copy. </td></tr>
 <tr><td> <code>-t DIRECTORY</code>, <code>--target-directory=DIRECTORY</code> </td><td> Copies everything into DIRECTORY </td></tr>
-<tr><td> <code>-T</code>, <code>--no-target-directory</code> </td><td> Treat DEST as normal file(not directory). </td></tr>
+<tr><td> <code>-T</code>, <code>--no-target-directory</code> </td><td> Treat DEST as normal file (not directory). </td></tr>
 </table>
 
 </small>
@@ -344,11 +344,11 @@ mv [OPTION]... -t DIRECTORY SOURCE...
 
 <table class="smalltbl">
 <caption style="font-size: larger;">Options</caption>
-<tr><td> <code>-f</code>,<code>--force</code> </td><td> Force move/rename(*i.e.*, no prompt before overwriting). </td></tr>
+<tr><td> <code>-f</code>,<code>--force</code> </td><td> Force move/rename (<i>i.e.</i>, no prompt before overwriting). </td></tr>
 <tr><td> <code>-i</code>,<code>--interactive</code> </td><td> Prompt before overwriting. </td></tr>
 <tr><td> <code>-n</code>,<code>--no-clobber</code> </td><td> Do not overwrite. </td></tr>
 <tr><td> <code>-t DIRECTORY</code>, <code>--target-directory=DIRECTORY</code> </td><td> Moves everything into DIRECTORY </td></tr>
-<tr><td> <code>-T</code>, <code>--no-target-directory</code> </td><td> Treat DEST as normal file(not directory). </td></tr>
+<tr><td> <code>-T</code>, <code>--no-target-directory</code> </td><td> Treat DEST as normal file (not directory). </td></tr>
 <tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
 </table>
 
@@ -369,7 +369,7 @@ rm [OPTION]... [FILE]...
 <caption style="font-size: larger;">Options</caption>
 <tr><td> <code>-f</code>,<code>--force</code> </td><td> Force removal, never prompt </td></tr>
 <tr><td> <code>-i</code> </td><td> Prompt before every removal </td></tr>
-<tr><td> <code>-r</code>,<code>-R</code>,<code>--recursive</code> </td><td> Recursive removal(*i.e.*, remove directories and their contents. </td></tr>
+<tr><td> <code>-r</code>,<code>-R</code>,<code>--recursive</code> </td><td> Recursive removal (<i>i.e.</i>, remove directories and their contents. </td></tr>
 <tr><td> <code>-v</code>,<code>--verbose</code> </td><td> Give more detailed information. </td></tr>
 </table>
 
@@ -427,7 +427,7 @@ For more detailed usage, type `man touch`.
 
 ### `chmod`
 
-**ch**ange file **mod**. Change file mode bits(=access permissions).
+**ch**ange file **mod**. Change file mode bits (=access permissions).
 <small>
 ```text
 chmod [OPTION]... MODE[,MODE]... FILE...
@@ -438,7 +438,7 @@ chmod [OPTION]... --reference=RFILE FILE...
 Symbolic mode : `[ugoa...][[-+=][permissions...]...]`
 
 <table>
-<tr><td> <code>u</code> </td><td> Owner(user) </td></tr>
+<tr><td> <code>u</code> </td><td> Owner (user) </td></tr>
 <tr><td> <code>g</code> </td><td> Group </td></tr>
 <tr><td> <code>o</code> </td><td> Others </td></tr>
 </table>
@@ -504,14 +504,14 @@ For more detailed usage including keybindings, type `man less`.
 
 ---
 
-## Virtual Machine vs. Bare Metal(Native)
+## Virtual Machine vs. Bare Metal (Native)
 
 - Advantages of VM
   - Can try multiple OSes on the same computer.
   - No need to repartition the disk drive.
   - Guest OS does not affect host system.
 - Drawbacks of VM
-  - Less efficient(Slower)
+  - Less efficient (Slower)
   - Indirect HW access
 
 Good for testing a new OS with minimized risk.
@@ -528,16 +528,16 @@ Good for testing a new OS with minimized risk.
 
 ### Preparing VM
 
-- Select appropirate guest OS(Arch Linux or Linux 4.X or 5.X(if avaliable)).
+- Select appropirate guest OS (Arch Linux or Linux 4.X or 5.X (if avaliable)).
 - If you selected Arch Linux, VM software will choose optimal memory and disk size.
-- If you selected general Linux or configuring VM manually, use 1GiB of RAM and &ge;10GiB of virtual disk(20GiB suggested).
+- If you selected general Linux or configuring VM manually, use 1GiB of RAM and &ge;10GiB of virtual disk (20GiB suggested).
 
 ---
 
 ### Preparing Existing Disk
 
 - Resize existing partition to make empty space.
-    - You could resize from Windows OS using third party utilities(reboot required).
+    - You could resize from Windows OS using third party utilities (reboot required).
     - You could also resize your partition from Arch Live USB with `ntfsresize` command.
 - &ge;10GiB Required. Resize as you want.
   <p class="warn" style="margin-top:1em;">
@@ -557,7 +557,7 @@ Good for testing a new OS with minimized risk.
 
 1. Visit [https://www.archlinux.org/download/](https://www.archlinux.org/download/).
 1. Download via BitTorrent or HTTP.
-1. Verify signature/hash(Optional).
+1. Verify signature/hash (Optional).
 
 ---
 
@@ -580,13 +580,13 @@ Select `dd mode` for **Rufus**.
 
 ---
 
-### Optical Media(CD/DVD)
+### Optical Media (CD/DVD)
 
 Just burn the image.
 
 ---
 
-### PXE Boot(Network Boot)
+### PXE Boot (Network Boot)
 
 - For Linux, follow instructions in the [Arch Wiki-PXE](https://wiki.archlinux.org/index.php/PXE).
 - For Windows, you may use serva community edition [(Application Note Section 3.17)](https://www.vercot.com/~serva/an/NonWindowsPXE3.html#linux).
@@ -599,9 +599,9 @@ Just burn the image.
 
 ### Entering the Boot Menu/Firmware Setup.
 
-- You might need to enter the Boot Menu/Firmware Setup to boot from the external devices(*e.g.*, USB)
-- Press a hotkey during the POST(when the logo displays) to enter the Boot Menu/Firmware Setup.
-- Hotkey differs from hardware to hardware(consult the manual).
+- You might need to enter the Boot Menu/Firmware Setup to boot from the external devices (*e.g.*, USB)
+- Press a hotkey during the POST (when the logo displays) to enter the Boot Menu/Firmware Setup.
+- Hotkey differs from hardware to hardware (consult the manual).
 - Usually `F2`,`Del`,`F10` for the Setup, `F8`~`F12` for the Boot Menu.
 
 ---
@@ -717,7 +717,7 @@ For most Korean keyboards, US English layout is just fine.
 Enter `ip link` to list network interfaces.
 Recent version of Arch linux uses Predictable Network Interface Names.
 
-Interfaces starting with `en` are usually ethernet(wired) interfaces.
+Interfaces starting with `en` are usually ethernet (wired) interfaces.
 Interfaces starting with `wl` are usually wireless interfaces.
 
 ---
@@ -739,13 +739,13 @@ h3 {
     <pre>ip address add <i>address/prefix_len</i> broadcast + dev <i>interface</i></pre> 
 1. Setup routing table.
     <pre>ip route add default via <i>gateway address</i> dev <i>interface</i></pre>
-1. In `resolv.conf`(type `man resolv.conf` for more details), add:
+1. In `resolv.conf` (type `man resolv.conf` for more details), add:
     <pre>nameserver <i>DNS Address</i></pre>
    to set DNS Server
 
 <p class="note" style="margin-top:0.5em">
 <b><i>NOTE:</i></b><br>
-<i>address/prefix_len</i> uses CIDR notaion(*e.g.*, 192.168.0.123/24).<br>
+<i>address/prefix_len</i> uses CIDR notaion (*e.g.*, 192.168.0.123/24).<br>
 </p>
 
 ---
@@ -758,19 +758,19 @@ h3 {
     ```
     Devices starting with `wl` are WLAN devices.
 
-1. Bring Interface Up(If the device state is DOWN)
+1. Bring Interface Up (If the device state is DOWN)
    <pre>ip link set <i>interface</i> up</pre>
-   If soft-blocked(see `rfkill`output),
+   If soft-blocked (see `rfkill`output),
    <pre>rfkill unblock wifi</pre>
 
 ---
 
-### Wireless Network(cont'd)
+### Wireless Network (cont'd)
 
-3. Scan Access Point(AP)s
+3. Scan Access Point (AP)s
    <pre>iw dev <i>interface</i> scan | less</pre>
     - SSID: Name of the network
-    - Signal: Signal Strength(in dBm)
+    - Signal: Signal Strength (in dBm)
     - Security
         - Does not have `Privacy` in the `capability` section &rarr; not encrypted.
         - Has `RSN` block &rarr; WPA2
@@ -779,7 +779,7 @@ h3 {
 
 ---
 
-### Wireless Network(cont'd)
+### Wireless Network (cont'd)
 
 4. Connecting to the AP
     - No encryption
@@ -804,7 +804,7 @@ For more information such as WPA-Enterprise, see [ArchWiki-WPA supplicant](https
 
 ### Sync Time
 
-1. Use `timedatectl`(component of `systemd`) to set timezone.
+1. Use `timedatectl` (component of `systemd`) to set timezone.
     1. Check status and timezone
         ```text
         timedatectl status
@@ -820,7 +820,7 @@ For more information such as WPA-Enterprise, see [ArchWiki-WPA supplicant](https
 
 ---
 
-### Sync Time(cont'd)
+### Sync Time (cont'd)
 
 2. Sync with NTP server
     ```text
@@ -839,6 +839,27 @@ For more information such as WPA-Enterprise, see [ArchWiki-WPA supplicant](https
 
 ## Partitioning
 
+- You must have at least 1 root partition for mounting `/` directory.
+- If you are using UEFI/GPT booting, you will need 1 EFI system partition.
+- You can separate paths into multiple discrete partitions(*e.g.* `/home`, `/var`, etc.).
+- Although the Linux could be used without swap(with enough RAM), it is highly recommanded to have swap partition.
+
+---
+
+### Partition Table
+
+- Table on the disk that describes the partitions on that disk.
+- Master Boot Record (MBR) - Old (IBM PC XT and onwards).
+    - The first sector(or LBA 0) of the disk contains MBR &rarr; Only one MBR per disk.
+    - MBR includes bootloader &rarr; One bootloader per MBR &rarr; One bootloader per disk.
+    - Maximum 2<sup>32</sup> sectors. (2TiB for 512B/Sector).
+    - Limits maximum number of (primary) partitions per disk to 4.
+- GUID Partition Table (GPT)
+    - Supports larger disks (&le;2<sup>64</sup> sectors &rarr; &le;8ZiB for 512B/Sector).
+    - Can use multiple bootloaders.
+    - Can have more than 4 primary partitions per disk.
+
+
 ---
 
 ### Filesystem Hierarchy Standard
@@ -850,7 +871,7 @@ table * {
 </style>
 Linux Standard for directory structure and directory contents.
 
-All files and directories are located under the root(`/`).
+All files and directories are located under the root (`/`).
 
 | Directory | Description |
 | :--- | :--- |
@@ -957,6 +978,91 @@ table * {
 
 ### Swap Partition
 
+- Space for swapping.
+- RAM is divided into *pages* in Linux.
+- A page in the memory(RAM) is copied to the swap file/partition to free up memory.
+- When the specific page stored in the swap space is required, the page is copied to the memory.
+- Also used for hibernation (storing RAM contents).
+- You could use a swap file instead of the swap partition.
+
+---
+
+<style scoped>
+table {
+  padding-top: 0.5em;
+}
+table td tr th {
+  font-size: smaller;
+}
+</style>
+
+### Swap Partition (cont'd)
+
+- So, how much space you will need?
+    - 2&times;RAM Size **WAS** recommanded in the past(when the RAM was small).
+
+    | Amount of RAM | Recommanded swap space | Recommanded swap space w/ hibernation |
+    | :---: | :---: | :---: |
+    | &lt;2GiB | 2&times; | 3&times; |
+    | 2 - 8GiB | 1&times; | 2&times; |
+    | 8 - 64GiB | 4GiB - 0.5&times; | 1.5&times; |
+    | &ge;64GiB | &ge;4GiB | Hibernation not recommanded |
+
+    <small>[RedHat Partition Scheme Document](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-disk-partitioning-setup-x86#sect-recommended-partitioning-scheme-x86)</small>
+
+---
+
+<style scoped>
+p.note, p.warn {
+  font-size: 70%;
+  margin-top: 0.2em;
+}
+</style>
+
+### Partitioning (cont'd)
+
+- You can you `parted`(CLI), `fdisk`(CLI) or `cfdisk`(TUI) from the liveUSB.
+- If your disk is empty(*i.e.*, no partitions present), you may have to create partition table.
+
+  <p class="note">
+  <b><i>NOTE:</i></b><br>
+  To shrink existing partition, it is worth using `gParted`(GUI) with liveboot USB that supports graphical enviroment to avoid mistakes that might lead to the data loss.
+  </p>
+  <p class="warn">
+  <b>WARNING</b><br>
+  Resizing, partitioning and formatting the disk might cause DATA LOSS.<br>
+  Backup your data if necessary.<br>
+  Do at YOUR OWN risk.<br>
+  </p>
+  
+  <p class="warn" style="margin-top:0.5e">
+  <b>WARNING</b><br>
+  Deleting and rewriting partition table might REMOVE ALL existing PARTITIONS.<br>
+  Use conversion utilities such as `gdisk`, `gptfdisk` to convert MBT to/from GPT.<br>
+  </p>
+
+---
+
+### Partitioning (cont'd)
+
+- If you are using UEFI, create EFI system partition first(if it does not exists).
+    Select `EFI System` partition type.
+- Then, create required partitions (*e.g.*, `/`, `/home`).
+    Select approperate partition type (*e.g.*, `Linux Root`, `Linux /home`).
+- Finally, create swap partition.
+    Select `Linux Swap` partition type.
+
+---
+
+### Formatting
+
+- After creating partitions, each partitions must be formatted.
+- As you know, it will remove all existing data.
+- Use <code>mkfs.<i>filesystem_type /path/to/partition</i></code> to format.
+    - ext4 is recommanded for the Linux.
+- For swap partition, use <code>mkswap <i>/path/to/swap</i></code> to initialize swap.
+- Run <code>swapon <i>/path/to/swap</i></code> to enable swap.
+
 ---
 
 ## Base System Installation
@@ -965,13 +1071,67 @@ table * {
 
 ## System Setup
 
+- Mount all the necessary partitions
+    <pre>mount <i>/path/to/partition /path/to/mount/position</i></pre>
+    Usually root to `/mnt`, EFI system to `/mnt/efi` or `/mnt/boot/efi`
+- Edit mirror list file (`/etc/pacman.d/mirrorlist`).
+    - You can [sort mirrors](https://wiki.archlinux.org/index.php/Mirrors#Sorting_mirrors) by speed.
+- Install `base` package group.
+    ```text
+    pacstrap /mnt base
+    ```
+
 ---
 
 ### `/etc/fstab`
 
+- `/etc/fstab` file defines how the filesystems should be mounted.
+- `systemd` will read this file and automatically manages the mounting of the filesystems.
+- You could use volume labels(`-L`) or UUID(`-U`) in the `fstab` file to specify filesystem.
+- Generate `fstab` file
+    ```text
+    genfstab -U /mnt >> /mnt/etc/fstab
+    ```
+- Check generated fstab file.
+
 ---
 
-### Time and Locale
+### System Setup (cont'd)
+
+- Chroot(change root) into the new root.
+    ```text
+    arch-chroot /mnt
+    ```
+    Root will be changed into the newly installed Linux filesystem.
+- Type `exit` to exit chroot.
+
+---
+
+### Time and Locale - Timezone
+
+- After chrooting, the time and the locale of the system should be set again.
+- Set timezone by running:
+    <pre>ln -sf /usr/share/zoneinfo/<i>Region/City</i> /etc/localtime</pre>
+- Generate `/etc/adjtime`
+   ```text
+   hwclock --systohc
+   ```
+
+---
+
+### Time and Locale - Locale
+
+- Edit `/etc/locale.gen`
+    - Uncomment `en_US.UTF8 UTF8` and other needed locales.
+- Generate locales
+    ```text
+    locale-gen
+    ```
+- Create/edit `/etc/locale.conf` and set language (`LANG` variable).
+    <pre>LANG=<i>Language_Locale.Encoding</i></pre>
+    *e.g.*, `en_US.UTF-8`
+- Change keyboard layout(if necessary) by editing `/etc/vconsole.conf`.
+    <pre>KEYMAP=<i>keymap</i></pre>
 
 ---
 
