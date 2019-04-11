@@ -112,7 +112,7 @@ Linux is a family of free OS based on the Linux kernel.
 
 <small>Kernel: Core part of the OS</small>
 
-The first version of the Linux as created by Linus Torvalds in 1991, as a MINIX-like free OS.
+The first version of Linux as created by Linus Torvalds in 1991, as a MINIX-like free OS.
 
 Freely modifiable (under GPL license), so everyone could make their own distro by obtaining necessary system components.
 
@@ -666,9 +666,9 @@ Select appropirate boot option.
 
 ### Firmware Setup
 
-If you cannot use Boot Menu, you have to enter firmware setup and change boot order.
-Boot order setting is usally located under `Boot` section.
-Change boot order and settings as necessary.
+- If you cannot use Boot Menu, you have to enter firmware setup and change boot order.
+- Boot order setting is usally located under `Boot` section.
+- Change boot order and settings as necessary.
 
 <p style="margin-top:1.5em; font-size: smaller;" class="note">
 <b>UEFI Users:</b><br>
@@ -684,18 +684,18 @@ If you use Linux, run <code>systemctl reboot --firmware-setup</code> to enter Fi
 
 ### Keyboard Setup
 
-Default layout: US English
+- Default layout: US English
 
 1. List available layouts
-  ```text
-  /usr/share/kbd/keymaps/**/*.map.gz
-  ```
+    ```text
+    /usr/share/kbd/keymaps/**/*.map.gz
+    ```
 1. Select layout
-  ```text
-  loadkeys <LAYOUT>
-  ```
+    ```text
+    loadkeys <LAYOUT>
+    ```
 
-For most Korean keyboards, US English layout is just fine.
+- For most Korean keyboards, US English layout is just fine.
 
 ---
 
@@ -714,11 +714,11 @@ For most Korean keyboards, US English layout is just fine.
 
 ### Network Setup
 
-Enter `ip link` to list network interfaces.
-Recent version of Arch linux uses Predictable Network Interface Names.
+- Enter `ip link` to list network interfaces.
+- Recent version of Arch Linux uses Predictable Network Interface Names.
 
-Interfaces starting with `en` are usually ethernet (wired) interfaces.
-Interfaces starting with `wl` are usually wireless interfaces.
+- Interfaces starting with `en` are usually ethernet (wired) interfaces.
+- Interfaces starting with `wl` are usually wireless interfaces.
 
 ---
 
@@ -745,7 +745,7 @@ h3 {
 
 <p class="note" style="margin-top:0.5em">
 <b><i>NOTE:</i></b><br>
-<i>address/prefix_len</i> uses CIDR notaion (*e.g.*, 192.168.0.123/24).<br>
+<code><i>address/prefix_len</i></code> uses CIDR notaion (<i>e.g.</i>, <code>192.168.0.123/24</code>).<br>
 </p>
 
 ---
@@ -842,7 +842,7 @@ For more information such as WPA-Enterprise, see [ArchWiki-WPA supplicant](https
 - You must have at least 1 root partition for mounting `/` directory.
 - If you are using UEFI/GPT booting, you will need 1 EFI system partition.
 - You can separate paths into multiple discrete partitions(*e.g.* `/home`, `/var`, etc.).
-- Although the Linux could be used without swap(with enough RAM), it is highly recommanded to have swap partition.
+- Although Linux could be used without swap(with enough RAM), it is highly recommanded to have swap partition.
 
 ---
 
@@ -1032,7 +1032,7 @@ p.note, p.warn {
   <b>WARNING</b><br>
   Resizing, partitioning and formatting the disk might cause DATA LOSS.<br>
   Backup your data if necessary.<br>
-  Do at YOUR OWN risk.<br>
+  Do at YOUR OWN risk (I warned you!).<br>
   </p>
   
   <p class="warn" style="margin-top:0.5e">
@@ -1059,7 +1059,7 @@ p.note, p.warn {
 - After creating partitions, each partitions must be formatted.
 - As you know, it will remove all existing data.
 - Use <code>mkfs.<i>filesystem_type /path/to/partition</i></code> to format.
-    - ext4 is recommanded for the Linux.
+    - ext4 is recommanded for the modern Linux systems.
 - For swap partition, use <code>mkswap <i>/path/to/swap</i></code> to initialize swap.
 - Run <code>swapon <i>/path/to/swap</i></code> to enable swap.
 
@@ -1116,6 +1116,13 @@ p.note, p.warn {
    ```text
    hwclock --systohc
    ```
+   <p class="note" style="">
+   <b><i>NOTE:</i></b><br>
+   This assumes that the hardware clock(usually onboard RTC) is using UTC.<br>
+   Windows uses the local time (KST(=UTC+9) in Korea) for the hardware clock.<br>
+   You may experience &plusmn;9h time difference(the difference between KST and UTC) when switching between OSes.<br>
+   If so, adjust Windows registry settings or Linux <code>timedatectl</code> settings.
+   </p>
 
 ---
 
@@ -1137,9 +1144,45 @@ p.note, p.warn {
 
 ### Network
 
+- Set the hostname first by creating `/etc/hostname` file.
+    <pre>echo <i>myhostname</i> > /etc/hostname</pre>
+- Add entries for the `/etc/hostis` file.
+    <pre>127.0.0.1	localhost<br>::1		localhost<br>127.0.1.1	<i>myhostname.localdomain</i>	<i>myhostname</i></pre>
+    If the system uses a static IP address, use it instead of `127.0.1.1`.
+
+---
+
+### Network (cont'd)
+
+- List network interfaces first
+    ```text
+    ip link
+    ```
+- If your device is not listed, check that the device driver is loaded.
+    - Use `lspci -v` or `lsusb -v` to list PCI or USB devices and their kernel modules.
+    - Run <code>dmesg | grep <i>kernel_module_name</i></code> to check if the module is loaded.
+    - Run <code>modprobe <i>module_name</i></code> to load kernel module.
+    - You may have to install additional modules from the AUR (Arch User Repository).
+
+---
+
+### Network (cont'd)
+
+- Install network manager
+    - You could use `ConnMan`, `netctl`, `NetworkManager`, `systemd-networkd` or `Wicd`.
+    - Do not run more than one network manager daemons at the same time.
+    - NetworkManager provides nice TUI interface and applet (`nm-applet`).
+    - Refer to the `man` page or ArchWiki for detailed usage.
+    - Enable network manager services after the installation.
+        <pre>systemctl enable <i>service_name</i></pre>
+
 ---
 
 #### Wireless Network
+
+- If you have network managers, use them to configure wireless networks.
+    - For example, `nmcli`, `nmtui` for `NetworkManager`.
+- Or you could follow instructions on the previous slide (slide 50-52).
 
 ---
 
