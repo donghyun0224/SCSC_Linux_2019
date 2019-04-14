@@ -1313,6 +1313,12 @@ If you are multibooting with other OSes, you need to install <code>osprober</cod
 
 ---
 
+<style scoped>
+p,pre,code {
+  font-size:80%;
+}
+</style>
+
 ## Finalizing
 
 - Set up `root` password
@@ -1323,6 +1329,13 @@ If you are multibooting with other OSes, you need to install <code>osprober</cod
     <pre>useradd -m -G users,audio,storage,video,wheel -s /bin/bash <i>USERNAME</i><br>passwd <i>USERNAME</i></pre>
     Run <code>su <i>USERNAME</i></code> to change user.
     Type `exit` to return.
+
+- Reboot
+    Type `reboot` to reboot.
+
+<p class="warn" style="font-size:70%"><b>WARNING</b><br>
+Make sure that the <code>root</code> password has been set before rebooting.
+</p>
 
 ---
 
