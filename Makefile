@@ -7,6 +7,8 @@ all: pdf
 preview: Presentation.md
 	${MARPCMD} ${MARPOPT} -p $< 
 
+.PHONY: pdf html preview viewpdf viewhtml
+
 pdf: Presentation.pdf
 
 html: Presentation.html
@@ -20,5 +22,5 @@ viewpdf: Presentation.pdf
 Presentation.html: Presentation.md
 	${MARPCMD} ${MARPOPT} $<
 
-viewhtml: html
+viewhtml: Presentation.html
 	${OPENCMD} $<
