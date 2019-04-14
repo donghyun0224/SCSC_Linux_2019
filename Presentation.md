@@ -1186,15 +1186,56 @@ p.note, p.warn {
 
 ---
 
+### Initramfs Setup
+
+- Usually not required.
+- If you are need a new initramfs image, modify `mkinitcpio.conf` and run:
+    ```text
+    mkinitcpio -p linux
+    ```
+
+---
+
+### Processor Microcode Installation
+
+Provides stability and security updates.
+The Linux kernel could apply microcode updates during boot.
+
+- AMD Processors
+    ```text
+    pacman -S amd-ucode
+    ```
+- Intel Processors
+    ```text
+    pacman -S intel-ucode
+    ```
+- Early microcode updates are applied by the bootloader.
+  Change bootloader settings [accordingly](https://wiki.archlinux.org/index.php/Microcode#Enabling_early_microcode_updates).
+- Late microcode updates are applied by the OS.
+  Follow instructions at : [ArchWiki - Microcode](https://wiki.archlinux.org/index.php/Microcode#Late_microcode_updates).
+
+---
+
 ## Bootloader Installation
 
 ---
 
 ### What is a Bootloader?
 
+- In the modern computers, the RAM does not contain any useful information just after the power-up.
+- The OSes and programs must be loaded from the secondary storages (*e.g.*, HDD, SSD) to the RAM.
+- The CPU must execute some kind of program that could read programs from the secondary storages through I/O channels and store them in the memory.
+- Such program is known as a bootloader.
+- Modern computers are using multistage bootloaders due to the increasing complexity.
+
 ---
 
 ### BIOS vs. EFI, MBR vs. GPT
+
+- BIOS (Basic Input/Output System)
+    - Provides basic HW abstraction layer (for keyboard, character I/Os, storage access etc.)
+    - Power-On Self-Test &rarr; Call `INT 19H` to start booting &rarr; Find and execute boot loader on the boot devices.
+- EFI (Extensible Firmware Interface)
 
 ---
 
