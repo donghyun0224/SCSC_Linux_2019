@@ -1236,14 +1236,93 @@ The Linux kernel could apply microcode updates during boot.
     - Provides basic HW abstraction layer (for keyboard, character I/Os, storage access etc.)
     - Power-On Self-Test &rarr; Call `INT 19H` to start booting &rarr; Find and execute boot loader on the boot devices.
 - EFI (Extensible Firmware Interface)
+    - Can verify, load and utilize device drivers instead of relying on the BIOS call.
+    - Security(SEC) &rarr; Pre-EFI Init. (PEI) &rarr; Driver Exec. Env. (DXE) &rarr; Boot Dev. Sel. (BDX) &rarr; Transient Sys. Load (TSL) &rarr; Runtime (RT) &rarr; Afterlife (AL)
+
+---
+
+### BIOS vs. EFI, MBR vs. GPT (cont'd)
+
+- MBR (Master Boot Record)
+    - Uses the first sector of the disk(512B).
+    - Max 4 (primary) partitions.
+    - Small Bootloader area (~440B).
+- GPT (GUID Partition Table)
+    - Min. 16384B
+    - Supports min. 128 max. partition entries.
+    - Bootloaders are not included in the partition table.
 
 ---
 
 ### Linux Boot Process
 
+1. Bootloader Phase
+    - The bootloader loads the kernel into the memory and gives control to it.
+1. Kernel Phase
+    1. Kernel Loading
+        - The kernel image files is loaded and decompressed into the memory.
+    1. Kernel Startup
+        - The kernel initializes memory mgmt., device drivers and loads the root partition.
+    - Early Userspace
+        - `initramfs` or `initrd` loads temp. root filesystem and prepares the system before the actual root mounting (in case of LVM, RAID, encrypted root or hibernation etc.).
+
+---
+
+### Linux Boot Process (cont'd)
+
+3. Init Process
+    - The first process of the system (PID=1), and the last process to terminate during shutdown.
+    - Starts/stops services (daemons)
+        - SysV-style
+            Starts/stops services when the system enters/leaves specific runlevel.
+        - Systemd
+            Services have required targets (After/Before).
+            Systemd starts/stops the required services.
+
+---
+
+### Installing the Bootloader
+
+- Grub is the most popular bootloader.
+- Grub could chainload other OSes.
+
+1. Install `grub` package
+    ```text
+    pacman -S grub
+    ```
+
+1. Install the bootloader into the disk.
+    - BIOS
+        <pre>grub-install --target=i386-pc /dev/<i>sdX</i></pre>
+    - EFI
+        <pre style="font-size:75%">grub-install --target=x86_64-efi --efi-directory=<i>esp</i> --bootloader-id=GRUB</pre>
+
+---
+
+### Installing the Bootloader (cont'd)
+
+3. Configuring GRUB
+    1. Edit `/etc/default/grub` file.
+    1. Generate `grub.cfg`
+        ```text
+        grub-mkconfig -o /boot/grub/grub.cfg
+        ```
+<p class="note"><i><b>NOTE:</b></i><br>
+If you are multibooting with other OSes, you need to install <code>osprober</code> to detect and load other OSes.
+</p>
+
 ---
 
 ## Finalizing
+
+- Set up `root` password
+    ```text
+    passwd
+    ```
+- Adding a normal (=*non-root*) user
+    <pre>useradd -m -G users,audio,storage,video,wheel -s /bin/bash <i>USERNAME</i><br>passwd <i>USERNAME</i></pre>
+    Run <code>su <i>USERNAME</i></code> to change user.
+    Type `exit` to return.
 
 ---
 
