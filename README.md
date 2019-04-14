@@ -9,14 +9,14 @@
 3. Run `make all` to make pdf and html.
 
 Options:
-    * `all` : Make pdf and html
-    * `pdf` : Make pdf
-    * `html` : Make html
-    * `viewpdf`/`viewhtml` : View pdf/html
-    * `preview` : Preview
-    * `clean` : Remove all pdf and html files
+  * `all` : Make pdf and html
+  * `pdf` : Make pdf
+  * `html` : Make html
+  * `viewpdf`/`viewhtml` : View pdf/html
+  * `preview` : Preview
+  * `clean` : Remove all pdf and html files
 
 Variables
-    * `MARPCMD` : Marp-cli command (default: `npx marp`)
-    * `MARPOPT` : Marp-cli options (default:`--html`)
-    * `OPENCMD` : Command for open files (default: `xdg-open`)
+  * `MARPCMD` : Marp-cli command (default: `npx marp`)
+  * `MARPOPT` : Marp-cli options (default:`--html`)
+  * `OPENCMD` : Command for open files (default: `xdg-open`)
