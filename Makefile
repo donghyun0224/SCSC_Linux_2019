@@ -1,8 +1,8 @@
-MARPCMD=npx marp
-MARPOPT=--html
-OPENCMD=xdg-open
+MARPCMD ?= npx marp
+MARPOPT ?= --html
+OPENCMD ?= xdg-open
 
-all: pdf
+all: pdf html
 
 preview: Presentation.md
 	${MARPCMD} ${MARPOPT} -p $< 
