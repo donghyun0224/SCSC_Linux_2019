@@ -7,7 +7,7 @@ all: pdf
 preview: Presentation.md
 	${MARPCMD} ${MARPOPT} -p $< 
 
-.PHONY: pdf html preview viewpdf viewhtml
+.PHONY: clean pdf html preview viewpdf viewhtml
 
 pdf: Presentation.pdf
 
@@ -24,3 +24,6 @@ Presentation.html: Presentation.md
 
 viewhtml: Presentation.html
 	${OPENCMD} $<
+
+clean: 
+	@rm -f *.pdf *html
