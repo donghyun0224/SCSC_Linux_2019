@@ -44,7 +44,7 @@ style: |
 
 # 2019-1 SCSC Linux Seminar
 
-<small>Apr 29<sup>th</sup> 2019<br/>Donghyeon Lee</small>
+<small><s>Apr 29<sup>th</sup> 2019</s><br/>Donghyeon Lee</small>
 
 
 <!---Table of Contents (BASELINE)
