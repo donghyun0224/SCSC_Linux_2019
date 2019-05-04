@@ -44,7 +44,7 @@ style: |
 
 # 2019-1 SCSC Linux Seminar
 
-<small><s>Apr 29<sup>th</sup> 2019</s><br/>Donghyeon Lee</small>
+<small>May 6<sup>th</sup> 2019<br/>Donghyeon Lee</small>
 
 
 <!---Table of Contents (BASELINE)
@@ -1344,6 +1344,56 @@ Make sure that the <code>root</code> password has been set before rebooting.
 ---
 
 ## User Management
+
+--- 
+
+### Adding a User
+
+```text
+useradd [OPTION(s)] LOGIN_NAME
+```
+
+<table class="smalltbl">
+<caption style="font-size: larger;">Options</caption>
+<tr><td><code>-d</code>,<code>--home-dir</code> <code>PATH_TO_HOME</code></td><td>Set home directory</td></tr>
+<tr><td><code>-G</code>,<code>--groups</code> <code>GROUP1[,GROUP2[,...]]</code></td><td>Supplementary groups</td></tr>
+<!-- <tr><td></td><td></td></tr> -->
+</table>
+
+---
+
+### Adding a Group
+
+```text
+groupadd [OPTION(s)] GROUP_NAME
+```
+
+<table class="smalltbl">
+<caption style="font-size: larger;">Options</caption>
+<tr><td><code>-f</code>,<code>--force</code></td><td>Successful exit even if the group already exists.</td></tr>
+</table>
+
+---
+
+<style scoped>
+tr>td:first-child {
+  width: 12em;
+}
+</style>
+
+### Adding a User to the Groups
+
+```text
+usermod [OPTION(s)] LOGIN_NAME
+```
+
+<table class="smalltbl">
+<caption style="font-size: larger;">Options</caption>
+<tr><td><code>-a</code>,<code>--append</code></td><td>Append user to the supplemental group(s) without removing the user from other groups.</td></tr>
+<tr><td><code>-g</code>,<code>--gid</code> <code>GROUP</code></td><td>Set primary group.</td></tr>
+<tr><td><code>-G</code>,<code>--groups</code> <code>GROUPS</code></td><td>Supplementary groups </td></tr>
+<tr><td> </td><td> </td></tr>
+</table>
 
 ---
 
