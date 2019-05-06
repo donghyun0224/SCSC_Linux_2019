@@ -1476,9 +1476,21 @@ systemctl [OPTIONS] COMMAND [UNIT]
 
 ### Package Manager
 
+- Automates package download/install/update/dep. resolv/uninstall.
+- Most package managers downloads precompiled binary package &rarr; Faster
+
 ---
 
 ### Using `pacman`
+
+- Install
+    - `pacman -S package_name`
+- Uninstall
+    - `pacman -R package_name`
+- Upgrade all
+    - `pacman -Syu`
+- Search
+    - `pacman -Ss query`
 
 ---
 
