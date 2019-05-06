@@ -1392,7 +1392,9 @@ usermod [OPTION(s)] LOGIN_NAME
 <tr><td><code>-a</code>,<code>--append</code></td><td>Append user to the supplemental group(s) without removing the user from other groups.</td></tr>
 <tr><td><code>-g</code>,<code>--gid</code> <code>GROUP</code></td><td>Set primary group.</td></tr>
 <tr><td><code>-G</code>,<code>--groups</code> <code>GROUPS</code></td><td>Supplementary groups </td></tr>
+<!-- 
 <tr><td> </td><td> </td></tr>
+-->
 </table>
 
 ---
@@ -1401,7 +1403,37 @@ usermod [OPTION(s)] LOGIN_NAME
 
 ---
 
+### Linux Service
+
+- Service: Background processes that run without user interaction
+- Service = Daemon in Linux
+- Started by `init` during startup
+
+---
+
 ### `systemd`
+
+- Includes system, service manager, event logger etc.
+
+![](https://upload.wikimedia.org/wikipedia/commons/3/35/Systemd_components.svg)
+
+---
+
+### Using `systemctl` to start/stop service
+
+```text
+systemctl [OPTIONS] COMMAND [UNIT]
+```
+
+<table class="smalltbl">
+<caption style="font-size: larger;">Commands</caption>
+<tr><td><code>status</code></td><td>Print status</td></tr>
+<tr><td><code>start</code></td><td>Start units</td></tr>
+<tr><td><code>stop</code></td><td>Stop units</td></tr>
+<tr><td><code>restart</code></td><td>Restart units</td></tr>
+<tr><td><code>enable</code></td><td>Enable units</td></tr>
+<tr><td><code>disable</code></td><td>Disable units</td></tr>
+</table>
 
 ---
 
@@ -1411,9 +1443,34 @@ usermod [OPTION(s)] LOGIN_NAME
 
 ### How Does Linux Install Packages?
 
+1. Configure
+    - Setup build env.
+1. Compile/Build
+    - Compile src.
+1. Install
+    - Copy bin. files.
+
 ---
 
 ### Installing a Package From the Source
+
+1. Unpack
+    ```text
+    tar xvzf <TARBALL NAME>.tar.gz
+    ```
+1. Configure
+    ```text
+    ./configure
+    ```
+1. Build
+    ```text
+    make
+    ```
+1. Install
+    ```text
+    make install
+    ```
+    <small>With root prvl.</small>
 
 ---
 
